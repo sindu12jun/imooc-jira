@@ -49,6 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@types/qs": "^6.9.5",
     "eslint-config-prettier": "^6.15.0",
     "husky": ">=4",
     "json-server": "^0.16.2",
