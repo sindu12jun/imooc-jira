@@ -62,3 +62,7 @@ export const useDebounce = <V>(value: V, delay?: number) => {
 
   return debouncedValue;
 };
+
+export const useArray = () => {
+  // hello，请把作业写在这里吧，写完记得再对照作业要求检查一下
+};
