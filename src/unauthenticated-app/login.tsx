@@ -3,6 +3,7 @@ import { useAuth } from "context/auth-context";
 import { Form, Input } from "antd";
 import { LongButton } from "unauthenticated-app/index";
 import { useAsync } from "utils/use-async";
+import { useDispatch } from "react-redux";
 
 // interface Base {
 //   id: number
@@ -27,6 +28,7 @@ export const LoginScreen = ({
 }) => {
   const { login, user } = useAuth();
   const { run, isLoading } = useAsync(undefined, { throwOnError: true });
+  const dispatch = useDispatch();
 
   // HTMLFormElement extends Element
   const handleSubmit = async (values: {
