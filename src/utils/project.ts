@@ -3,6 +3,7 @@ import { Project } from "screens/project-list/list";
 import { useCallback, useEffect } from "react";
 import { cleanObject } from "utils/index";
 import { useHttp } from "utils/http";
+import { useUrlQueryParam } from "utils/url";
 
 export const useProjects = (param?: Partial<Project>) => {
   const client = useHttp();
@@ -54,4 +55,13 @@ export const useAddProject = () => {
     mutate,
     ...asyncResult,
   };
+};
+
+export const useProjectModal = () => {
+  const [{ projectModalOpen }, setProjectModalOpen] = useUrlQueryParam([
+    "projectModalOpen",
+  ]);
+  const open = () => setProjectModalOpen({ projectModalOpen: true });
+  const close = () => setProjectModalOpen({ projectModalOpen: false });
+  return [projectModalOpen === "true", open, close] as const;
 };

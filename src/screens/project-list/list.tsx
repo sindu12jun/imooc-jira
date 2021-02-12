@@ -6,7 +6,7 @@ import { TableProps } from "antd/es/table";
 // react-router 和 react-router-dom的关系，类似于 react 和 react-dom/react-native/react-vr...
 import { Link } from "react-router-dom";
 import { Pin } from "components/pin";
-import { useEditProject } from "utils/project";
+import { useEditProject, useProjectModal } from "utils/project";
 import { ButtonNoPadding } from "components/lib";
 
 // TODO 把所有ID都改成number类型
@@ -22,11 +22,11 @@ export interface Project {
 interface ListProps extends TableProps<Project> {
   users: User[];
   refresh?: () => void;
-  projectButton: JSX.Element;
 }
 
 export const List = ({ users, ...props }: ListProps) => {
   const { mutate } = useEditProject();
+  const [_, openModal] = useProjectModal();
   const pinProject = (id: number) => (pin: boolean) =>
     mutate({ id, pin }).then(props.refresh);
   return (
@@ -85,7 +85,11 @@ export const List = ({ users, ...props }: ListProps) => {
               <Dropdown
                 overlay={
                   <Menu>
-                    <Menu.Item key={"edit"}>{props.projectButton}</Menu.Item>
+                    <Menu.Item key={"edit"}>
+                      <ButtonNoPadding onClick={openModal} type={"link"}>
+                        创建项目
+                      </ButtonNoPadding>
+                    </Menu.Item>
                   </Menu>
                 }
               >
