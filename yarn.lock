@@ -7525,7 +7525,17 @@ jest@26.6.0:
     import-local "^3.0.2"
     jest-cli "^26.6.0"
 
-jira-dev-tool@1.6.18, jira-dev-tool@^1.6.13:
+jira-dev-tool@1.6.59:
+  version "1.6.59"
+  resolved "https://registry.yarnpkg.com/jira-dev-tool/-/jira-dev-tool-1.6.59.tgz#67a98dba9fc9c976d004f3bea1b0349437a0da17"
+  integrity sha512-0LsUIP2qMSRzbnlccWeaWOxuh7zN+SHYarcT/YFQE+1mw9k6jbDNCxlxCjrpKfo/BYF8LWL6pmTSvHfDAS0kGg==
+  dependencies:
+    antd "^4.9.1"
+    jira-dev-tool "^1.6.13"
+    msw "^0.24.1"
+    react-query "^3.5.10"
+
+jira-dev-tool@^1.6.13:
   version "1.6.18"
   resolved "https://registry.yarnpkg.com/jira-dev-tool/-/jira-dev-tool-1.6.18.tgz#6bb5cd6197edd8eaf00ebad92ba223a539c6c094"
   integrity sha512-ciSk/LDZ1s6B8GU/i2BxotSWOnRXZqveVecNjLC15mPtZ7ZTxrNr6B9shM/HIudzSzz/hreaT1bNNsGia0TsRA==

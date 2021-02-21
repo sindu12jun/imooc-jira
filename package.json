@@ -19,7 +19,7 @@
     "craco-less": "^1.17.1",
     "dayjs": "^1.9.7",
     "history": "^5.0.0",
-    "jira-dev-tool": "1.6.18",
+    "jira-dev-tool": "1.6.59",
     "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
