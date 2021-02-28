@@ -1,9 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
 import React from "react";
 import { Form, Input } from "antd";
-import { Project } from "screens/project-list/list";
 import { UserSelect } from "components/user-select";
+import { Project } from "types/project";
 
 export interface User {
   id: number;

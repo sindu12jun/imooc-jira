@@ -1,4 +1,3 @@
-import { Project } from "screens/project-list/list";
 import { useHttp } from "utils/http";
 import { QueryKey, useMutation, useQuery } from "react-query";
 import {
@@ -6,6 +5,7 @@ import {
   useDeleteConfig,
   useEditConfig,
 } from "utils/use-optimistic-options";
+import { Project } from "types/project";
 
 export const useProjects = (param?: Partial<Project>) => {
   const client = useHttp();
