@@ -36,7 +36,7 @@ export const SearchPanel = () => {
         value={searchParams.typeId}
         onChange={(value) => setSearchParams({ typeId: value })}
       />
-      <Button onClick={reset}>清楚筛选器</Button>
+      <Button onClick={reset}>清除筛选器</Button>
     </Row>
   );
 };
