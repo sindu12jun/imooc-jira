@@ -1,7 +1,5 @@
 import { useLocation } from "react-router";
 import { useProject } from "utils/project";
-import { useKanbans } from "utils/kanban";
-import { useTasks } from "utils/task";
 
 export const useProjectIdInUrl = () => {
   const { pathname } = useLocation();
@@ -11,8 +9,10 @@ export const useProjectIdInUrl = () => {
 
 export const useProjectInUrl = () => useProject(useProjectIdInUrl());
 
-export const useKanbansInProject = () =>
-  useKanbans({ projectId: useProjectIdInUrl() });
+export const useKanbanSearchParams = () => ({ projectId: useProjectIdInUrl() });
 
-export const useTasksInProject = () =>
-  useTasks({ projectId: useProjectIdInUrl() });
+export const useKanbansQueryKey = () => ["kanbans", useKanbanSearchParams()];
+
+export const useTasksSearchParams = () => ({ projectId: useProjectIdInUrl() });
+
+export const useTasksQueryKey = () => ["tasks", useTasksSearchParams()];
