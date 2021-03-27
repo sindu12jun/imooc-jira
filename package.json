@@ -2,6 +2,7 @@
   "name": "jira",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@craco/craco": "^6.0.0",
     "@emotion/core": "^11.0.0",
@@ -36,7 +37,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "rules": {
@@ -67,6 +70,7 @@
     "@types/react-beautiful-dnd": "^13.0.0",
     "@types/react-helmet": "^6.1.0",
     "eslint-config-prettier": "^6.15.0",
+    "gh-pages": "^3.1.0",
     "husky": ">=4",
     "json-server": "^0.16.2",
     "lint-staged": ">=10",
