@@ -36,7 +36,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build -r git@github.com:sindu12jun/sindu12jun.github.io.git -b main"
   },
   "eslintConfig": {
     "rules": {
