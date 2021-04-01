@@ -21,7 +21,7 @@ export const useTasksSearchParams = () => {
     "name",
     "typeId",
     "processorId",
-    "tagId"
+    "tagId",
   ]);
   const projectId = useProjectIdInUrl();
   return useMemo(
@@ -30,7 +30,7 @@ export const useTasksSearchParams = () => {
       typeId: Number(param.typeId) || undefined,
       processorId: Number(param.processorId) || undefined,
       tagId: Number(param.tagId) || undefined,
-      name: param.name
+      name: param.name,
     }),
     [projectId, param]
   );
@@ -40,7 +40,7 @@ export const useTasksQueryKey = () => ["tasks", useTasksSearchParams()];
 
 export const useTasksModal = () => {
   const [{ editingTaskId }, setEditingTaskId] = useUrlQueryParam([
-    "editingTaskId"
+    "editingTaskId",
   ]);
   const { data: editingTask, isLoading } = useTask(Number(editingTaskId));
   const startEdit = useCallback(
@@ -57,6 +57,6 @@ export const useTasksModal = () => {
     editingTask,
     startEdit,
     close,
-    isLoading
+    isLoading,
   };
 };

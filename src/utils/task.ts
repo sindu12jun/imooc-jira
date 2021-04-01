@@ -6,7 +6,6 @@ import { Project } from "types/project";
 import { SortProps } from "utils/kanban";
 import { useDebounce } from "utils/index";
 
-
 export const useTasks = (param?: Partial<Task>) => {
   const client = useHttp();
   const debouncedParam = { ...param, name: useDebounce(param?.name, 200) };
@@ -23,7 +22,7 @@ export const useAddTask = (queryKey: QueryKey) => {
     (params: Partial<Task>) =>
       client(`tasks`, {
         data: params,
-        method: "POST"
+        method: "POST",
       }),
     useAddConfig(queryKey)
   );
@@ -32,7 +31,7 @@ export const useAddTask = (queryKey: QueryKey) => {
 export const useTask = (id?: number) => {
   const client = useHttp();
   return useQuery<Project>(["task", { id }], () => client(`tasks/${id}`), {
-    enabled: Boolean(id)
+    enabled: Boolean(id),
   });
 };
 
@@ -42,7 +41,7 @@ export const useEditTask = (queryKey: QueryKey) => {
     (params: Partial<Task>) =>
       client(`tasks/${params.id}`, {
         method: "PATCH",
-        data: params
+        data: params,
       }),
     useEditConfig(queryKey)
   );
@@ -54,7 +53,7 @@ export const useDeleteTask = (queryKey: QueryKey) => {
   return useMutation(
     ({ id }: { id: number }) =>
       client(`tasks/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       }),
     useDeleteConfig(queryKey)
   );
@@ -65,7 +64,7 @@ export const useReorderTask = (queryKey: QueryKey) => {
   return useMutation((params: SortProps) => {
     return client("tasks/reorder", {
       data: params,
-      method: "POST"
+      method: "POST",
     });
   }, useReorderTaskConfig(queryKey));
 };
