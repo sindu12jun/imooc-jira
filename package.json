@@ -38,7 +38,8 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d build -r git@github.com:sindu12jun/sindu12jun.github.io.git -b main"
+    "deploy": "gh-pages -d build -r git@github.com:sindu12jun/sindu12jun.github.io.git -b main",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "rules": {
@@ -69,6 +70,12 @@
     "@types/react-beautiful-dnd": "^13.0.0",
     "@types/react-helmet": "^6.1.0",
     "eslint-config-prettier": "^6.15.0",
-    "json-server": "^0.16.2"
+    "husky": ">=6",
+    "json-server": "^0.16.2",
+    "lint-staged": ">=10",
+    "prettier": "^2.2.1"
+  },
+  "lint-staged": {
+    "*.{js,css,md,ts,tsx}": "prettier --write"
   }
 }
