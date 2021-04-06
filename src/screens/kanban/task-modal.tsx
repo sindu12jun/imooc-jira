@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useForm } from "antd/es/form/Form";
+import { useForm } from "antd/lib/form/Form";
 import { useTasksModal, useTasksQueryKey } from "screens/kanban/util";
 import { useDeleteTask, useEditTask } from "utils/task";
 import { Button, Form, Input, Modal } from "antd";

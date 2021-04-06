@@ -34,7 +34,7 @@ const FullPage = styled.div`
 
 export const FullPageLoading = () => (
   <FullPage>
-    <Spin size={"large"} />
+    <Spin data-testid={"loading"} size={"large"} />
   </FullPage>
 );
 

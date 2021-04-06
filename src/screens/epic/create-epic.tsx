@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Button, Drawer, Form, Input, Spin } from "antd";
-import { DrawerProps } from "antd/es/drawer";
+import { DrawerProps } from "antd/lib/drawer";
 import styled from "@emotion/styled";
 import { ErrorBox } from "components/lib";
 import { useAddEpic } from "utils/epic";
 import { useEpicsQueryKey } from "screens/epic/util";
-import { useForm } from "antd/es/form/Form";
+import { useForm } from "antd/lib/form/Form";
 import { useProjectIdInUrl } from "screens/kanban/util";
 
 export const CreateEpic = (
