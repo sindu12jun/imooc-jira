@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useForm } from "antd/es/form/Form";
 import { useTasksModal, useTasksQueryKey } from "screens/kanban/util";
 import { useDeleteTask, useEditTask } from "utils/task";
 import { Button, Form, Input, Modal } from "antd";
@@ -12,7 +11,7 @@ const layout = {
 };
 
 export const TaskModal = () => {
-  const [form] = useForm();
+  const [form] = Form.useForm();
   const { editingTaskId, editingTask, close } = useTasksModal();
   const { mutateAsync: editTask, isLoading: editLoading } = useEditTask(
     useTasksQueryKey()

@@ -5,14 +5,13 @@ import styled from "@emotion/styled";
 import { ErrorBox } from "components/lib";
 import { useAddEpic } from "utils/epic";
 import { useEpicsQueryKey } from "screens/epic/util";
-import { useForm } from "antd/es/form/Form";
 import { useProjectIdInUrl } from "screens/kanban/util";
 
 export const CreateEpic = (
   props: Pick<DrawerProps, "visible"> & { onClose: () => void }
 ) => {
   const { mutate: addEpic, isLoading, error } = useAddEpic(useEpicsQueryKey());
-  const [form] = useForm();
+  const [form] = Form.useForm();
   const projectId = useProjectIdInUrl();
 
   const onFinish = async (values: any) => {
