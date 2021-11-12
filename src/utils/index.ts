@@ -15,8 +15,11 @@ export const isVoid = (value: unknown) =>
 // b = {name: 'Jack'}
 // b = () => {}
 // 在一个函数里，改变传入的对象本身是不好的
-export const cleanObject = (object: { [key: string]: unknown }) => {
+export const cleanObject = (object?: { [key: string]: unknown }) => {
   // Object.assign({}, object)
+  if (!object) {
+    return {};
+  }
   const result = { ...object };
   Object.keys(result).forEach((key) => {
     const value = result[key];
@@ -30,8 +33,7 @@ export const cleanObject = (object: { [key: string]: unknown }) => {
 export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [callback]);
 };
 
 // const debounce = (func, delay) => {

@@ -6,11 +6,12 @@ import {
   useEditConfig,
 } from "utils/use-optimistic-options";
 import { Project } from "types/project";
+import { cleanObject } from "utils/index";
 
 export const useProjects = (param?: Partial<Project>) => {
   const client = useHttp();
 
-  return useQuery<Project[]>(["projects", param], () =>
+  return useQuery<Project[]>(["projects", cleanObject(param)], () =>
     client("projects", { data: param })
   );
 };

@@ -9,7 +9,7 @@ import right from "assets/right.svg";
 import { useDocumentTitle } from "utils";
 import { ErrorBox } from "components/lib";
 
-export const UnauthenticatedApp = () => {
+export default function UnauthenticatedApp() {
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -34,7 +34,7 @@ export const UnauthenticatedApp = () => {
       </ShadowCard>
     </Container>
   );
-};
+}
 
 export const LongButton = styled(Button)`
   width: 100%;

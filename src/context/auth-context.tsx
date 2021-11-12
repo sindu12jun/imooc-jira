@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useCallback } from "react";
 import * as auth from "auth-provider";
 import { http } from "utils/http";
 import { useMount } from "utils";
@@ -54,9 +54,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       queryClient.clear();
     });
 
-  useMount(() => {
-    run(bootstrapUser());
-  });
+  useMount(
+    useCallback(() => {
+      run(bootstrapUser());
+    }, [])
+  );
 
   if (isIdle || isLoading) {
     return <FullPageLoading />;
