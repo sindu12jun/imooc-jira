@@ -5,7 +5,7 @@ import { ReactComponent as SoftwareLogo } from "assets/software-logo.svg";
 import styled from "@emotion/styled";
 import { ButtonNoPadding, Row } from "components/lib";
 import { Button, Dropdown, Menu } from "antd";
-import { Navigate, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import { ProjectScreen } from "screens/project";
 import { resetRoute } from "utils";
 import { ProjectModal } from "screens/project-list/project-modal";
@@ -32,9 +32,9 @@ export default function AuthenticatedApp() {
       <PageHeader />
       <Main>
         <Routes>
-          <Route path={"/projects"} element={<ProjectListScreen />} />
-          <Route path={"/projects/:projectId/*"} element={<ProjectScreen />} />
-          <Navigate to={"/projects"} />
+          <Route path={"projects"} element={<ProjectListScreen />} />
+          <Route path={"projects/:projectId/*"} element={<ProjectScreen />} />
+          <Route index element={<ProjectListScreen />} />
         </Routes>
       </Main>
       <ProjectModal />
